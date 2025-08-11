@@ -1,17 +1,15 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import { HomePage } from "../pages";
+import Layout from "../layouts";
 
 function AppRoutes() {
   return (
-    <Routes>
-      <Route path="/" element={<HomePage />} />
-      {/* <Route element={<MainLayout />}>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-      </Route>
-      <Route path="*" element={<NotFound />} /> */}
-    </Routes>
+    <Layout>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+      </Routes>
+    </Layout>
   );
 }
 
