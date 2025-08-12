@@ -49,7 +49,7 @@ export default function Header() {
             <ul className="header-module__headerMenu--r0w2H style-module__menu--usS4r">
               <li>
                 <Link
-                  to="/"
+                  to="/aboutus"
                   className="button-module__button--zoKKM button-module__text--RxUvB button-module__medium--Be_AN button-module__shapeRectangle--ObB9e button-module__directionNormal--Q9l5k style-module__link--dnFix"
                 >
                   <span className="button-module__buttonChildren--hvRdH">
@@ -108,7 +108,7 @@ export default function Header() {
               </div>
             </div>
             <Link
-              to="/"
+              to="/favourites"
               className="button-module__button--zoKKM button-module__text--RxUvB button-module__medium--Be_AN button-module__shapeRectangle--ObB9e button-module__directionNormal--Q9l5k header-module__buttonLink--hu8Gv"
               data-testid="favourite_button"
             >
@@ -166,7 +166,7 @@ export default function Header() {
               </span>
             </button>
             <Link
-              to="/"
+              to="/announce"
               data-testid="put_button"
               className="button-module__button--zoKKM button-module__secondary--yaBXT button-module__big--KNyAn button-module__shapeRounded--NIFoU button-module__directionReverse--TsnDw header-module__headerLink--sgF0P"
             >
