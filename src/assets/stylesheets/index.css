@@ -13263,3 +13263,8 @@ template, [hidden] {
 .style-module__deleteAccountButton--xoNFu {
     color: #a7afbc
 }
+
+.lineheight {
+    line-height: 44px;
+
+}
