@@ -9,7 +9,7 @@ function AppRoutes() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="aboutus" element={<AboutUs />} />
-        <Route path="/favourites" element={<Favourites />} />
+        <Route path="/favourites/*" element={<Favourites />} />
         <Route path="announce" element={<Announce />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
