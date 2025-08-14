@@ -1,5 +1,4 @@
 @import "tailwindcss";
-
 #id {
     font-family: "Inter", sans-serif;
 }
@@ -13267,4 +13266,22 @@ template, [hidden] {
 .lineheight {
     line-height: 44px;
 
+}
+
+@media screen and (max-width: 1030px) {
+    .searcher {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 950px) {
+    .qr {
+        display: none;
+    }
+    .intro {
+        display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+    }
 }
