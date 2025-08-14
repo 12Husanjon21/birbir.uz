@@ -2,6 +2,7 @@ import React from "react";
 import UsefulCards from "../../components/QulaySection/QulaySection";
 import CardsSection from "../../components/CardsSection/CardsSection";
 import IntroSection from "../../components/introSection/introSection";
+import Button from "../../components/Buttons/Buttons";
 
 export default function HomePage() {
   return (
@@ -13,6 +14,9 @@ export default function HomePage() {
         <CardsSection />
         <div></div>
         <IntroSection />
+        <div></div>
+        <CardsSection showTitle={false} />
+        <Button />
       </section>
     </>
   );

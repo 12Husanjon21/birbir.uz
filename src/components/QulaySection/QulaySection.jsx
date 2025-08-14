@@ -64,8 +64,8 @@ export default function UsefulCards() {
   };
 
   return (
-    <div className="max-w-[1230px] mx-auto">
-      <div className="flex justify-between items-center mb-6">
+    <div className="md:max-w-[1100px] lg:max-w-[1230px] mx-auto xl:px-0 px-10">
+      <div className="flex justify-between items-center mb-6 ">
         <h2 className="text-[32px] font-bold">Foydali va qulay</h2>
         <div className="flex gap-2">
           <button
@@ -84,7 +84,7 @@ export default function UsefulCards() {
           </button>
         </div>
       </div>
-      <div className="overflow-hidden ">
+      <div className="sm:overflow-hidden overflow-auto">
         <div
           className="flex transition-transform duration-500 ease-in-out gap-4 pr-2 "
           // We set the transform to shift by the percentage of the page
@@ -101,7 +101,7 @@ export default function UsefulCards() {
                 <img
                   src={card.image}
                   alt={card.title}
-                  className="w-[296px] h-[260px] object-contain"
+                  className="max-w-[296px] h-[260px] object-contain"
                 />
               </div>
             </div>

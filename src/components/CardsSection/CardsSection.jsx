@@ -89,7 +89,7 @@ const cardsData = [
   },
 ];
 
-export default function CardsSection() {
+export default function CardsSection({ showTitle = true }) {
   const [likedCards, setLikedCards] = useState(new Set());
   const handleLikeClick = (index) => {
     // Create a new Set to trigger a re-render
@@ -103,11 +103,13 @@ export default function CardsSection() {
   };
   return (
     <div className="max-w-[1230px] mx-auto mt-[110px] mb-[100px]">
-      <div className="flex justify-between items-center mb-6">
-        <h2 className="text-[32px] font-bold">Qiziqarli</h2>
-      </div>
+      {showTitle && (
+        <div className="flex justify-between xl:px-0 px-10 items-center mb-6">
+          <h2 className="text-[32px] font-bold">Qiziqarli</h2>
+        </div>
+      )}
       {/* Start of the new cards grid section */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 xl:px-0 px-10 lg:grid-cols-4 gap-4">
         {cardsData.map((card, index) => (
           <div
             key={index}
