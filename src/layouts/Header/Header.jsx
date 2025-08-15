@@ -7,6 +7,7 @@ import { IoPersonOutline } from "react-icons/io5";
 import { IoIosArrowDown } from "react-icons/io";
 import { BiMenuAltLeft } from "react-icons/bi";
 import { IoIosSearch } from "react-icons/io";
+import { FaLocationArrow } from "react-icons/fa";
 
 export default function Header({ children }) {
   const [isSticky, setIsSticky] = useState(false);
@@ -60,9 +61,17 @@ export default function Header({ children }) {
             </button>
           </div>
         ) : (
-          <Link to={"/"} className="text-[37px] font-semibold">
-            <p className="text-[#BD007D]">birbir</p>
-          </Link>
+          <div className="flex items-center gap-[32px]">
+            <Link to={"/"} className="text-[37px] font-semibold">
+              <p className="text-[#BD007D]">birbir</p>
+            </Link>
+            <button className=" behided flex cursor-pointer transition-colors duration-300  gap-x-2 items-center">
+              <FaLocationArrow size={22} className="text-gray-400 " />
+              <p className="text-gray-400 hover:text-black transition-colors duration-300 ">
+                Barcha hududlar
+              </p>
+            </button>
+          </div>
         )}
 
         {/* Middle section */}
@@ -85,7 +94,7 @@ export default function Header({ children }) {
 
         {/* Right section */}
         <div className="flex items-center gap-x-4">
-          <ul className="flex items-center gap-[20px]">
+          <ul className="flex items-center ">
             {/* showMenu items — faqat 910px dan katta bo‘lsa ko‘rinadi */}
             <div className="hidden lg:flex items-center gap-[20px]">
               {showMenu && (
@@ -105,25 +114,21 @@ export default function Header({ children }) {
               )}
             </div>
 
-            <div className="hidden md:flex">
-              {showFullMenu && (
-                <>
-                  <li className="flex items-center gap-x-[4px] ml-6 hover:text-[#BD007D] transition-colors duration-300">
-                    <IoMdHeartEmpty
-                      size={"24px"}
-                      className="text-[#A7AFBC] cursor-pointer"
-                    />
-                    <Link to={"/favourites"}>Sevimlilar</Link>
-                  </li>
-                  <li className="flex items-center text-[15px] gap-x-2 hover:text-[#BD007D] transition-colors duration-300">
-                    <IoPersonOutline
-                      size={"20px"}
-                      className="text-[#A7AFBC] cursor-pointer"
-                    />
-                    <Link>Tizimga kirish</Link>
-                  </li>
-                </>
-              )}
+            <div className="hidden md:flex items-center gap-[20px]">
+              <li className="flex items-center gap-x-[4px] ml-6 hover:text-[#BD007D] transition-colors duration-300">
+                <IoMdHeartEmpty
+                  size={"24px"}
+                  className="text-[#A7AFBC] cursor-pointer"
+                />
+                <Link to={"/favourites"}>Sevimlilar</Link>
+              </li>
+              <li className="flex items-center text-[15px] gap-x-2 hover:text-[#BD007D] transition-colors duration-300">
+                <IoPersonOutline
+                  size={"20px"}
+                  className="text-[#A7AFBC] cursor-pointer"
+                />
+                <Link>Tizimga kirish</Link>
+              </li>
             </div>
           </ul>
 

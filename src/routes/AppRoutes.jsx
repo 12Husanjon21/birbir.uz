@@ -1,6 +1,13 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import { AboutUs, Announce, ErrorPage, Favourites, HomePage } from "../pages";
+import {
+  AboutUs,
+  Announce,
+  ErrorPage,
+  Favourites,
+  HomePage,
+  RegionsPage,
+} from "../pages";
 import Layout from "../layouts";
 
 function AppRoutes() {
@@ -11,6 +18,7 @@ function AppRoutes() {
         <Route path="aboutus" element={<AboutUs />} />
         <Route path="/favourites/*" element={<Favourites />} />
         <Route path="announce" element={<Announce />} />
+        <Route path="regionspage" element={<RegionsPage />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
     </Layout>

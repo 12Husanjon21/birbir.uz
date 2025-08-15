@@ -6298,7 +6298,7 @@
 @media (min-width: 1280px) {
     .banner-module__bannerPhone--VUepb {
         max-width: 480px;
-        top: -37px;
+        top: -44px;
         left: 60px
     }
 }
@@ -13283,5 +13283,12 @@ template, [hidden] {
             flex-direction: column;
             justify-content: center;
             align-items: center;
+    }
+}
+
+
+@media screen and (max-width: 1100px) {
+    .behided {
+        display: none;
     }
 }
