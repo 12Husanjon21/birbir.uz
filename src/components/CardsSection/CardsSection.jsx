@@ -113,7 +113,7 @@ export default function CardsSection({ showTitle = true }) {
         {cardsData.map((card, index) => (
           <div
             key={index}
-            // Added 'group' class here
+            // Added 'group' className here
             className="group cursor-pointer overflow-hidden bg-white"
           >
             <div className="w-full h-[296px] flex justify-center items-center relative">

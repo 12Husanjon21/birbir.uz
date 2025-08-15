@@ -12,7 +12,7 @@ export default function Favourites() {
             Избранное
           </h2>
 
-          <div class="tabs-module__tabs--OfLd4 favoriteContainer-module__tabs--CZAFI">
+          <div className="tabs-module__tabs--OfLd4 favoriteContainer-module__tabs--CZAFI">
             <div className="tabs-module__list--XPvaK">
               <NavLink
                 to="/favourites"
@@ -46,11 +46,11 @@ export default function Favourites() {
           </Routes>
         </div>
 
-        <div class="container-module__container--dFCmu emptyFavorites-module__feedSection--wY00o">
-          <h2 class="emptyFavorites-module__sectionTitle--b7xdF headline-module__h2--dAJvt">
+        <div className="container-module__container--dFCmu emptyFavorites-module__feedSection--wY00o">
+          <h2 className="emptyFavorites-module__sectionTitle--b7xdF headline-module__h2--dAJvt">
             Вам может понравиться
           </h2>
-          <CardsSection />
+          <CardsSection showTitle={false} />
         </div>
       </div>
     </div>

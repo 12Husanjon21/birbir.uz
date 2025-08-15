@@ -108,12 +108,17 @@ export default function Header({ children }) {
             <div className="hidden md:flex">
               {showFullMenu && (
                 <>
-                  <li className="flex items-center gap-x-[4px] ml-6 hover:text-[#BD007D] transition-colors duration-300">
-                    <IoMdHeartEmpty
-                      size={"24px"}
-                      className="text-[#A7AFBC] cursor-pointer"
-                    />
-                    <Link to={"/favourites"}>Sevimlilar</Link>
+                  <li>
+                    <Link
+                      to={"/favourites"}
+                      className="flex items-center gap-x-[4px] mr-6 hover:text-[#BD007D] transition-colors duration-300"
+                    >
+                      <IoMdHeartEmpty
+                        size={"24px"}
+                        className="text-[#A7AFBC] cursor-pointer"
+                      />
+                      Sevimlilar
+                    </Link>
                   </li>
                   <li className="flex items-center text-[15px] gap-x-2 hover:text-[#BD007D] transition-colors duration-300">
                     <IoPersonOutline
