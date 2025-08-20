@@ -3,5 +3,6 @@ import Announce from "./Announce/Announce";
 import ErrorPage from "./ErrorPage/ErrorPage";
 import Favourites from "./Favourites/Favourites";
 import HomePage from "./Home/HomePage";
+import Legal from "./Legal/Legal";
 
-export { HomePage, AboutUs, Announce, Favourites, ErrorPage };
+export { HomePage, AboutUs, Announce, Favourites, ErrorPage, Legal };
