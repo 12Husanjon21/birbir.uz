@@ -7,6 +7,7 @@ import {
   Favourites,
   HomePage,
   Legal,
+  RegionsPage,
 } from "../pages";
 import Layout from "../layouts";
 
@@ -19,6 +20,7 @@ function AppRoutes() {
         <Route path="/favourites/*" element={<Favourites />} />
         <Route path="announce" element={<Announce />} />
         <Route path="legal" element={<Legal />} />
+        <Route path="regions" element={<RegionsPage />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
     </Layout>

@@ -84,7 +84,7 @@ export default function UsefulCards() {
           </button>
         </div>
       </div>
-      <div className="sm:overflow-hidden overflow-auto">
+      <div className="md:overflow-hidden overflow-auto">
         <div
           className="flex transition-transform duration-500 ease-in-out gap-4 pr-2 "
           // We set the transform to shift by the percentage of the page
@@ -94,7 +94,6 @@ export default function UsefulCards() {
             <div
               key={index}
               className="rounded-lg flex flex-col justify-between"
-              // Each card should have a fixed width to ensure 4 fit per page
               style={{ flex: `0 0 calc(25% - 12px)` }}
             >
               <div className="flex justify-center ">

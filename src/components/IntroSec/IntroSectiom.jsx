@@ -2,14 +2,14 @@ import React from "react";
 
 export default function IntroSection() {
   return (
-    <div className="col-module__col-lg-12--dy1Lm">
+    <div className="col-module__col-lg-12--dy1Lm xl:mx-0 mx-[30px]">
       <div className="banner-module__bannerWrapper--SpPma style-module__banner--yAEcO">
         <img
           src="https://file.birbir.uz/web/frontend/phone-md.png"
           className="banner-module__bannerPhone--VUepb"
           alt=""
         />
-        <div className="banner-module__bannerContent--Le87Y">
+        <div className="banner-module__bannerContent--Le87Y bg-white">
           <img
             src="https://placehold.co/180x180"
             className="banner-module__bannerCode--Un5V3"
