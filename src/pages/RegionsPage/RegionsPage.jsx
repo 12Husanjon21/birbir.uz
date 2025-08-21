@@ -62,9 +62,24 @@ export default function RegionsPage() {
     "Yangiobod",
   ];
 
+  const buxoroDistricts = [
+    "Buxoro",
+    "Olot",
+    "Vobkent",
+    "Gazli",
+    "Galaosiyo",
+    "Gʻijduvon",
+    "Kogon",
+    "Qorakoʻl",
+    "Romitan",
+    "Shofirkon",
+    "Jondor",
+    "Qorovulbozor",
+  ];
+
   return (
     <div className="max-w-[1230px] mx-auto font-bold xl:px-0 px-10 mb-16 lg:mb-[100px]">
-      <h2 className="text-[48px] mt-[90px] mb-[50px]">
+      <h2 className="md:text-[48px] text-[32px] mt-[90px] line-height-[48px] mb-[50px]">
         O'zbekistonning barcha viloyatlari
       </h2>
 
@@ -75,6 +90,7 @@ export default function RegionsPage() {
       {/* Viloyat kartasi props orqali */}
       <RegionCard regionName="Andijon viloyati" districts={andijonDistricts} />
       <div></div>
+      <RegionCard regionName="Buxoro viloyati" districts={buxoroDistricts} />
     </div>
   );
 }

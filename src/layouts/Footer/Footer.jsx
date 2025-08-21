@@ -33,7 +33,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  to="/regionspage"
+                  to="/regions"
                   className="button-module__button--zoKKM button-module__text--RxUvB button-module__medium--Be_AN button-module__shapeRectangle--ObB9e button-module__directionNormal--Q9l5k style-module__link--dnFix"
                 >
                   <span className="button-module__buttonChildren--hvRdH">

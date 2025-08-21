@@ -18,7 +18,7 @@ function AppRoutes() {
         <Route path="aboutus" element={<AboutUs />} />
         <Route path="/favourites/*" element={<Favourites />} />
         <Route path="announce" element={<Announce />} />
-        <Route path="regionspage" element={<RegionsPage />} />
+        <Route path="regions" element={<RegionsPage />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
     </Layout>

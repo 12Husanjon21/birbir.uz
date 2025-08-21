@@ -1,14 +1,23 @@
 import React from "react";
 import UsefulCards from "../../components/QulaySection/QulaySection";
 import CardsSection from "../../components/CardsSection/CardsSection";
-import IntroSection from "../../components/introSection/introSection";
+import IntroSection from "../../components/IntroSec/IntroSectiom";
 import Button from "../../components/Buttons/Buttons";
+import Filter from "./Filter";
 
 export default function HomePage() {
   return (
     <>
+      <section className="style-module__section--xDKx0 bg-white">
+        <div className="container-module__container--dFCmu px-0">
+          <h1 className="homeHeading-module__heading--ENz5x headline-module__h1--vBIBM">
+            Покупайте и продавайте в Ташкенте
+          </h1>
+        </div>
+      </section>
       <section className="mt-16 max-w-[1230px] min-h-screen bg-[#FFFFFF] mx-auto ">
-        <div></div>
+        <Filter />
+        <div className="mb-8"></div>
         <UsefulCards />
         <div></div>
         <CardsSection />

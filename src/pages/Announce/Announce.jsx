@@ -177,7 +177,7 @@ function Announce() {
   const isMaxReached = address.length >= maxLength;
 
   return (
-    <div className="bg-[#F5F6F7] min-h-screen font-sans">
+    <div className=" px-4min-h-screen font-sans">
       <div className="xl:w-[1280px] mx-auto space-y-2">
         <h1 className="hidden lg:block text-[36px] py-[32px] font-sans font-bold leading-[44px]">
           {t("putstitle")}

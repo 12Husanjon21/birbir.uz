@@ -109,14 +109,14 @@ export default function CardsSection({ showTitle = true }) {
         </div>
       )}
       {/* Start of the new cards grid section */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 xl:px-0 px-10 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-2 md:grid-cols-3 xl:px-0 px-10 lg:grid-cols-4 gap-4">
         {cardsData.map((card, index) => (
           <div
             key={index}
-            // Added 'group' class here
+            // Added 'group' className here
             className="group cursor-pointer overflow-hidden bg-white"
           >
-            <div className="w-full h-[296px] flex justify-center items-center relative">
+            <div className="w-full max-h-[296px] flex justify-center items-center relative">
               <img
                 src={card.image}
                 alt={card.title}
