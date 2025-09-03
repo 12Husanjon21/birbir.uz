@@ -8,6 +8,7 @@ import {
   HomePage,
   Legal,
   RegionsPage,
+  ProductPage,
 } from "../pages";
 import Layout from "../layouts";
 
@@ -22,6 +23,7 @@ function AppRoutes() {
         <Route path="legal" element={<Legal />} />
         <Route path="regions" element={<RegionsPage />} />
         <Route path="*" element={<ErrorPage />} />
+        <Route path="/product/:id" element={<ProductPage />} />
       </Routes>
     </Layout>
   );

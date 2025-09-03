@@ -1,106 +1,20 @@
-import React from "react";
 import { useState } from "react";
-
-// Placeholder data for the new cards section
-const cardsData = [
-  {
-    image: "https://placehold.co/296x296",
-    price: "207 000 so'm",
-    title: "Aqilli Wi-fi kamera",
-    location: "Toshkent",
-    date: "07.06.2025, 23:53",
-  },
-  {
-    image: "https://placehold.co/296x296",
-    price: "500 000 so'm",
-    title: "detskiy stulchik 500000",
-    location: "Toshkent",
-    date: "24.07.2025, 13:28",
-  },
-  {
-    image: "https://placehold.co/296x296",
-    price: "Bepul",
-    title: "remont bytovoy texniki",
-    location: "Toshkent",
-    date: "25.03.2025, 18:24",
-  },
-  {
-    image: "https://placehold.co/296x296",
-    price: "2 000 000 so'm",
-    title: "Naushnik BOSE 35 ||",
-    location: "Toshkent",
-    date: "07.08.2025, 13:10",
-  },
-  {
-    image: "https://placehold.co/296x296",
-    price: "207 000 so'm",
-    title: "Aqilli Wi-fi kamera",
-    location: "Toshkent",
-    date: "07.06.2025, 23:53",
-  },
-  {
-    image: "https://placehold.co/296x296",
-    price: "500 000 so'm",
-    title: "detskiy stulchik 500000",
-    location: "Toshkent",
-    date: "24.07.2025, 13:28",
-  },
-  {
-    image: "https://placehold.co/296x296",
-    price: "Bepul",
-    title: "remont bytovoy texniki",
-    location: "Toshkent",
-    date: "25.03.2025, 18:24",
-  },
-  {
-    image: "https://placehold.co/296x296",
-    price: "2 000 000 so'm",
-    title: "Naushnik BOSE 35 ||",
-    location: "Toshkent",
-    date: "07.08.2025, 13:10",
-  },
-  {
-    image: "https://placehold.co/296x296",
-    price: "207 000 so'm",
-    title: "Aqilli Wi-fi kamera",
-    location: "Toshkent",
-    date: "07.06.2025, 23:53",
-  },
-  {
-    image: "https://placehold.co/296x296",
-    price: "500 000 so'm",
-    title: "detskiy stulchik 500000",
-    location: "Toshkent",
-    date: "24.07.2025, 13:28",
-  },
-  {
-    image: "https://placehold.co/296x296",
-    price: "Bepul",
-    title: "remont bytovoy texniki",
-    location: "Toshkent",
-    date: "25.03.2025, 18:24",
-  },
-  {
-    image: "https://placehold.co/296x296",
-    price: "2 000 000 so'm",
-    title: "Naushnik BOSE 35 ||",
-    location: "Toshkent",
-    date: "07.08.2025, 13:10",
-  },
-];
+import { Link } from "react-router-dom";
+import { cardsData } from "../../utils/index";
 
 export default function CardsSection({ showTitle = true }) {
   const [likedCards, setLikedCards] = useState(new Set());
+
   const handleLikeClick = (index) => {
-    // Create a new Set to trigger a re-render
     const newLikedCards = new Set(likedCards);
     if (newLikedCards.has(index)) {
-      newLikedCards.delete(index); // Unlike the card
+      newLikedCards.delete(index);
     } else {
-      newLikedCards.add(index); // Like the card
+      newLikedCards.add(index);
     }
     setLikedCards(newLikedCards);
   };
+
   return (
     <div className="max-w-[1230px] mx-auto mt-[110px] mb-[100px]">
       {showTitle && (
@@ -108,12 +22,11 @@ export default function CardsSection({ showTitle = true }) {
           <h2 className="text-[32px] font-bold">Qiziqarli</h2>
         </div>
       )}
-      {/* Start of the new cards grid section */}
       <div className="grid grid-cols-2 md:grid-cols-3 xl:px-0 px-10 lg:grid-cols-4 gap-4">
-        {cardsData.map((card, index) => (
-          <div
-            key={index}
-            // Added 'group' className here
+        {cardsData.map((card) => (
+          <Link
+            to={`/product/${card.id}`}
+            key={card.id}
             className="group cursor-pointer overflow-hidden bg-white"
           >
             <div className="w-full max-h-[296px] flex justify-center items-center relative">
@@ -121,21 +34,18 @@ export default function CardsSection({ showTitle = true }) {
                 src={card.image}
                 alt={card.title}
                 className="w-full h-full object-cover rounded-2xl"
-                onError={(e) => {
-                  e.target.onerror = null;
-                  e.target.src =
-                    "https://placehold.co/300x200?text=Image+Not+Found";
-                }}
               />
               <button
-                onClick={() => handleLikeClick(index)}
+                onClick={(e) => {
+                  e.preventDefault(); // linkni to‘xtatamiz
+                  handleLikeClick(card.id);
+                }}
                 className="absolute bottom-2 right-2 p-2 cursor-pointer bg-white rounded-full shadow-md"
               >
-                {/* You can add a heart icon here, for example */}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className={`h-5 w-5 transition-colors duration-300 ease-in-out ${
-                    likedCards.has(index) ? "text-red-500" : "text-gray-500"
+                  className={`h-5 w-5 ${
+                    likedCards.has(card.id) ? "text-red-500" : "text-gray-500"
                   }`}
                   viewBox="0 0 20 20"
                   fill="currentColor"
@@ -149,13 +59,8 @@ export default function CardsSection({ showTitle = true }) {
               </button>
             </div>
             <div className="p-4 pl-0">
-              <p
-                // Added 'group-hover:text-blue-500' here
-                className="text-xl font-bold mb-2  "
-              >
-                {card.price}
-              </p>
-              <h3 className="text-[18px] font-normal mb-3 transition duration-300 ease-in-out group-hover:text-[#BD007D]">
+              <p className="text-xl font-bold mb-2">{card.price}</p>
+              <h3 className="text-[18px] font-normal mb-3 transition duration-300 group-hover:text-[#BD007D]">
                 {card.title}
               </h3>
               <div className="flex-col items-center text-[18px] text-gray-400 mt-4">
@@ -163,10 +68,9 @@ export default function CardsSection({ showTitle = true }) {
                 <p>{card.date}</p>
               </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
-      {/* End of the new cards grid section */}
     </div>
   );
 }

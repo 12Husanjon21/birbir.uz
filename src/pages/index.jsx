@@ -5,6 +5,7 @@ import Favourites from "./Favourites/Favourites";
 import HomePage from "./Home/HomePage";
 import Legal from "./Legal/Legal";
 import RegionsPage from "./RegionsPage/RegionsPage";
+import ProductPage from "./ProductPage/ProductPage";
 
 export {
   HomePage,
@@ -14,4 +15,5 @@ export {
   ErrorPage,
   RegionsPage,
   Legal,
+  ProductPage,
 };
