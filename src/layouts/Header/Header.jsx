@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { AiFillZhihuCircle } from "react-icons/ai";
 import { IoAddCircle, IoPersonOutline, IoClose } from "react-icons/io5";
 import { IoIosArrowDown, IoIosSearch } from "react-icons/io";
-import { BiMenuAltLeft } from "react-icons/bi";
+import { CgMenuLeft } from "react-icons/cg";
 import { LuMenu } from "react-icons/lu";
 import { FaLocationArrow } from "react-icons/fa";
 import CategoryMenu from "../../components/CategoryMenu/CategoryMenu";
@@ -40,8 +40,8 @@ export default function Header({ children }) {
   return (
     <>
       <header
-        className={`w-full  bg-transparent transition-all duration-300 z-50 ${
-          isSticky ? "fixed top-0 " : ""
+        className={`w-full bg-transparent transition-all duration-300 z-50 ${
+          isSticky ? "fixed top-0 left-0" : "pt-6"
         }`}
       >
         <div className="max-w-[1235px]  mx-auto flex-col justify-between xl:px-0 px-6 items-center gap-[8px]">
@@ -49,7 +49,7 @@ export default function Header({ children }) {
           <div className="flex bg-white justify-between items-center max-w-full pr-2 py-3">
             {/* Left Section */}
             {isSticky ? (
-              <div className="flex items-center  gap-[10px]">
+              <div className="flex items-center gap-[30px]">
                 <div>
                   <div
                     className={` ${
@@ -58,7 +58,7 @@ export default function Header({ children }) {
                   >
                     <Link
                       to={"/"}
-                      className="text-[32px] font-semibold hide xl:ml-0 ml-5"
+                      className="text-[38px] font-semibold hide xl:ml-0 ml-5"
                     >
                       <p className="text-[#BD007D]">birbir</p>
                     </Link>
@@ -73,12 +73,12 @@ export default function Header({ children }) {
                       : "bg-[#F5F6F7] text-black"
                   }`}
                 >
-                  {isOpen ? <IoClose size={22} /> : <BiMenuAltLeft size={22} />}
+                  {isOpen ? <IoClose size={22} /> : <CgMenuLeft size={24} />}
                 </button>
               </div>
             ) : (
               <div className="flex items-center gap-[20px]">
-                <Link to={"/"} className="text-[32px] font-semibold ">
+                <Link to={"/"} className="text-[38px] font-semibold ">
                   <p className="text-[#BD007D] ">birbir</p>
                 </Link>
                 <button className="hidden md:flex behided cursor-pointer transition-colors duration-300 gap-x-2 items-center">
@@ -92,13 +92,13 @@ export default function Header({ children }) {
 
             {/* Middle Section */}
             {isSticky ? (
-              <div className="flex-1 flex items-center justify-between bg-[#F5F6F7] rounded-xl overflow-hidden mx-2">
+              <div className="flex-1 flex items-center justify-between bg-[#F5F6F7] rounded-xl p-[5px] pl-4 overflow-hidden mx-2">
                 <input
                   type="text"
                   placeholder="iPhone 15 Pro topish"
-                  className=" w-full px-4 py-2 bg-transparent  text-[16px] outline-none text-gray-700"
+                  className=" w-full  bg-transparent  text-[16px] outline-none text-gray-700"
                 />
-                <button className="bg-[#BD007D] cursor-pointer p-[10px] rounded-xl flex items-center justify-center">
+                <button className="bg-[#BD007D] cursor-pointer p-[10px]  rounded-xl flex items-center justify-center">
                   <IoIosSearch color="#fff" size={20} />
                 </button>
               </div>
@@ -138,7 +138,7 @@ export default function Header({ children }) {
                     />
                     <Link to={"/favourites"}>Sevimlilar</Link>
                   </li>
-                  <li className="flex items-center text-[15px] gap-x-2 hover:text-[#BD007D] transition-colors duration-300">
+                  <li className="flex items-center text-[15px] mr-2 gap-x-2 hover:text-[#BD007D] transition-colors duration-300">
                     <IoPersonOutline
                       size={"18px"}
                       className="text-[#A7AFBC] cursor-pointer"
@@ -156,9 +156,9 @@ export default function Header({ children }) {
                     isSticky ? "behide" : ""
                   }`}
                 >
-                  <div className="flex items-center gap-x-2">
+                  <div className="flex items-center p-1 gap-x-2">
                     <p className="text-[15px]">Qo'yish</p>
-                    <IoAddCircle size={"22px"} />
+                    <IoAddCircle size={"24px"} />
                   </div>
                 </button>
 
