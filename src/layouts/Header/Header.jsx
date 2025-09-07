@@ -9,6 +9,7 @@ import { LuMenu } from "react-icons/lu";
 import { FaLocationArrow } from "react-icons/fa";
 import CategoryMenu from "../../components/CategoryMenu/CategoryMenu";
 import Menu from "../../components/MobileMenu/Menu";
+import { AuthButton } from "../../components";
 
 export default function Header({ children }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -139,11 +140,7 @@ export default function Header({ children }) {
                     <Link to={"/favourites"}>Sevimlilar</Link>
                   </li>
                   <li className="flex items-center text-[15px] mr-2 gap-x-2 hover:text-[#BD007D] transition-colors duration-300">
-                    <IoPersonOutline
-                      size={"18px"}
-                      className="text-[#A7AFBC] cursor-pointer"
-                    />
-                    <Link>Tizimga kirish</Link>
+                    <AuthButton />
                   </li>
                 </div>
               </ul>
