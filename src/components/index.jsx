@@ -1,3 +1,5 @@
+import AuthButton from "./AuthButton/AuthButton";
 import UsefulCards from "./QulaySection/QulaySection";
 
-export default UsefulCards;
+
+export { UsefulCards, AuthButton };

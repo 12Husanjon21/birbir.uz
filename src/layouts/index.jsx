@@ -2,6 +2,7 @@ import Header from "./Header/Header";
 import Footer from "./Footer/Footer";
 
 export default function Layout({ children }) {
+
   return (
     <div id="app">
       <div className="layout-module__layout--Fz17i layout-module__primary--gahDf bg-white">
