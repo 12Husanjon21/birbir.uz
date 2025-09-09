@@ -128,7 +128,7 @@ export const clearStorage = (isLocal) => {
 export const redirectToAuthPage = () => {
   const sendToAuthBot = (sessionToken) => {
     window.open(
-      `https://t.me/tg_appointment_bot?start=${sessionToken}`,
+      `https://t.me/toparmoncombot?start=${sessionToken}`,
       "_blank",
       "noopener,noreferrer"
     );
