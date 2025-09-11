@@ -1,9 +1,12 @@
-import { useState } from "react";
+// CardsSection.jsx
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { cardsData } from "../../utils/index";
+import { getData } from "../../utils/utils";
 
 export default function CardsSection({ showTitle = true }) {
   const [likedCards, setLikedCards] = useState(new Set());
+  const [cardsData, setCardsData] = useState([]); // state ichida productlarni saqlaymiz
+  const [loading, setLoading] = useState(true);
 
   const handleLikeClick = (index) => {
     const newLikedCards = new Set(likedCards);
@@ -14,6 +17,24 @@ export default function CardsSection({ showTitle = true }) {
     }
     setLikedCards(newLikedCards);
   };
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const data = await getData("api/products");
+        console.log("API javob:", data); // 👈 nima qaytganini ko‘rish
+        setCardsData(Array.isArray(data) ? data : data.products || []);
+      } catch (error) {
+        console.error("Mahsulotlarni olishda xatolik:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchProducts();
+  }, []);
+
+  if (loading) return <p className="text-center">Yuklanmoqda...</p>;
 
   return (
     <div className="max-w-[1230px] mx-auto mt-[110px] mb-[100px]">
@@ -37,7 +58,7 @@ export default function CardsSection({ showTitle = true }) {
               />
               <button
                 onClick={(e) => {
-                  e.preventDefault(); // linkni to‘xtatamiz
+                  e.preventDefault();
                   handleLikeClick(card.id);
                 }}
                 className="absolute bottom-2 right-2 p-2 cursor-pointer bg-white rounded-full shadow-md"
@@ -60,7 +81,7 @@ export default function CardsSection({ showTitle = true }) {
             </div>
             <div className="p-4 pl-0">
               <p className="text-xl font-bold mb-2">{card.price}</p>
-              <h3 className="text-[18px] font-normal mb-3 transition duration-300 group-hover:text-[#BD007D]">
+              <h3 className="text-[18px] font-normal mb-3 transition duration-300 group-hover:text-[#26A560]">
                 {card.title}
               </h3>
               <div className="flex-col items-center text-[18px] text-gray-400 mt-4">

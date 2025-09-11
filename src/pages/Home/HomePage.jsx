@@ -10,7 +10,7 @@ export default function HomePage() {
     <>
       <section className="style-module__section--xDKx0 bg-white">
         <div className="container-module__container--dFCmu px-0">
-          <h1 className="homeHeading-module__heading--ENz5x headline-module__h1--vBIBM">
+          <h1 className="homeHeading-module__heading--ENz5x headline-module__h1--vBIBM -mb-4">
             Покупайте и продавайте в Ташкенте
           </h1>
         </div>

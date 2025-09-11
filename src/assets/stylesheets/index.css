@@ -1195,7 +1195,7 @@
 }
 
 .marketPlace-module__link--AjdaL {
-    background-color: #bd007d;
+    background-color: #26A560;
     border-radius: 50px;
     justify-content: center;
     align-items: center;
@@ -1212,7 +1212,7 @@
 }
 
 .marketPlace-module__default--aTtIX:hover {
-    background-color: #c41a8b
+    background-color: #26A560
 }
 
 .marketPlace-module__primary--nGFv7 {
@@ -1228,7 +1228,7 @@
 }
 
 .marketPlace-module__primary--nGFv7:hover svg path {
-    fill: #bd007d
+    fill: #26A560
 }
 
 .marketPlace-module__secondary--mrfQa {
@@ -6106,7 +6106,7 @@
 }
 
 .banner-module__bannerWrapper--SpPma {
-    background: #bd007d url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5NDQiIGhlaWdodD0iMjQzIiBmaWxsPSJub25lIj48cGF0aCBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iNiIgZD0iTTEwMTEgMjM5LjI2NmMtMTI2LjMxOC0yMi41OC0yMjQuNDMtOTkuMzU2LTIyNC40My0xNjQuMjI0IDAtOTQuODQgMTMyLjg1OS05Ni44OTIgMTI0LjY4NCAwLTkuMTQgMTA4LjMyMS0yOTIuMjE2IDYzLjQzOC00MDUuMDQ0IDIyLjM4MkM0MzIuNzk4IDcwLjcxIDYyLjE4MSAyOS44OC02Ni45OTkgMTk1Ljc0NyIvPjwvc3ZnPgo=) 74% 9%/740px no-repeat;
+    background: #26A560 url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5NDQiIGhlaWdodD0iMjQzIiBmaWxsPSJub25lIj48cGF0aCBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iNiIgZD0iTTEwMTEgMjM5LjI2NmMtMTI2LjMxOC0yMi41OC0yMjQuNDMtOTkuMzU2LTIyNC40My0xNjQuMjI0IDAtOTQuODQgMTMyLjg1OS05Ni44OTIgMTI0LjY4NCAwLTkuMTQgMTA4LjMyMS0yOTIuMjE2IDYzLjQzOC00MDUuMDQ0IDIyLjM4MkM0MzIuNzk4IDcwLjcxIDYyLjE4MSAyOS44OC02Ni45OTkgMTk1Ljc0NyIvPjwvc3ZnPgo=) 74% 9%/740px no-repeat;
     border-radius: 24px;
     flex-direction: column;
     align-items: center;
