@@ -4,13 +4,14 @@ import axios from "axios";
 /**
  * Axios instance with base config
  */
-const JWT= JSON.parse(localStorage.getItem("JWT"))  
+const JWT = JSON.parse(localStorage.getItem("JWT"));
 
 const api = axios.create({
-  baseURL: `${import.meta.env.VITE_API_BASE_URL}`, // change this to your API base URL
-  timeout: 10000, // 10 seconds
+  baseURL: import.meta.env.VITE_API_BASE_URL,
+  timeout: 10000,
   headers: {
     "Content-Type": "application/json",
+    "Cache-Control": "no-cache", // <- cache ishlatilmaydi
     Authorization: `Bearer ${JWT}`,
   },
 });
@@ -101,6 +102,9 @@ export const getStorage = (key, isLocal) => {
   }
 };
 
+// const token = getStorage("JWT", true);
+
+// const tokenSession = getStorage("JWT", false);
 /**
  * Remove item from localStorage
  */
@@ -122,7 +126,6 @@ export const clearStorage = (isLocal) => {
     sessionStorage.clear();
   }
 };
-
 
 // bu funksiya login qilmagan bo'lsa auth botga yuboradi
 export const redirectToAuthPage = () => {

@@ -10,6 +10,7 @@ import { FaLocationArrow } from "react-icons/fa";
 import CategoryMenu from "../../components/CategoryMenu/CategoryMenu";
 import Menu from "../../components/MobileMenu/Menu";
 import { AuthButton } from "../../components";
+import logo from "../../assets/images/Toparmongreen.png";
 
 export default function Header({ children }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -61,7 +62,11 @@ export default function Header({ children }) {
                       to={"/"}
                       className="text-[38px] font-semibold hide xl:ml-0 ml-5"
                     >
-                      <p className="text-[#BD007D]">birbir</p>
+                      <img
+                        src={logo}
+                        alt="logo"
+                        className="max-w-[120px] max-h-[30px]"
+                      />
                     </Link>
                   </div>
                 </div>
@@ -70,7 +75,7 @@ export default function Header({ children }) {
                   onClick={() => setIsOpen(!isOpen)}
                   className={`p-[12px] flex cursor-pointer transition-colors duration-300 rounded-xl ${
                     isOpen
-                      ? "bg-[#BD007D] text-white"
+                      ? "bg-[#26A560] text-white"
                       : "bg-[#F5F6F7] text-black"
                   }`}
                 >
@@ -80,7 +85,11 @@ export default function Header({ children }) {
             ) : (
               <div className="flex items-center gap-[20px]">
                 <Link to={"/"} className="text-[38px] font-semibold ">
-                  <p className="text-[#BD007D] ">birbir</p>
+                  <img
+                    src={logo}
+                    alt="logo"
+                    className="max-w-[120px] max-h-[30px]"
+                  />
                 </Link>
                 <button className="hidden md:flex behided cursor-pointer transition-colors duration-300 gap-x-2 items-center">
                   <FaLocationArrow size={20} className="text-gray-400" />
@@ -99,7 +108,7 @@ export default function Header({ children }) {
                   placeholder="iPhone 15 Pro topish"
                   className=" w-full  bg-transparent  text-[16px] outline-none text-gray-700"
                 />
-                <button className="bg-[#BD007D] cursor-pointer p-[10px]  rounded-xl flex items-center justify-center">
+                <button className="bg-[#26A560] cursor-pointer p-[10px]  rounded-xl flex items-center justify-center">
                   <IoIosSearch color="#fff" size={20} />
                 </button>
               </div>
@@ -116,13 +125,13 @@ export default function Header({ children }) {
                 <div className="hidden md:flex items-center gap-[20px]">
                   {showMenu && (
                     <>
-                      <li className="hover:text-[#BD007D] transition-colors duration-300">
+                      <li className="hover:text-[#26A560] transition-colors duration-300">
                         <Link to={"/aboutus"}>Biz haqimizda</Link>
                       </li>
-                      <li className="hover:text-[#BD007D] transition-colors duration-300">
+                      <li className="hover:text-[#26A560] transition-colors duration-300">
                         <Link>Qo'llab-quvvatlash</Link>
                       </li>
-                      <li className="flex items-center gap-x-1 cursor-pointer hover:text-[#BD007D] transition-colors duration-300">
+                      <li className="flex items-center gap-x-1 cursor-pointer hover:text-[#26A560] transition-colors duration-300">
                         <AiFillZhihuCircle size={"20px"} />
                         <p>UZ</p>
                         <IoIosArrowDown size={"20px"} />
@@ -132,14 +141,14 @@ export default function Header({ children }) {
                 </div>
 
                 <div className="hidden md:flex gap-x-4 searcher">
-                  <li className="flex items-center gap-x-[4px] ml-6 hover:text-[#BD007D] transition-colors duration-300">
+                  <li className="flex items-center gap-x-[4px] ml-6 hover:text-[#26A560] transition-colors duration-300">
                     <IoMdHeartEmpty
                       size={"22px"}
                       className="text-[#A7AFBC] cursor-pointer"
                     />
                     <Link to={"/favourites"}>Sevimlilar</Link>
                   </li>
-                  <li className="flex items-center text-[15px] mr-2 gap-x-2 hover:text-[#BD007D] transition-colors duration-300">
+                  <li className="flex items-center text-[15px] mr-2 gap-x-2 hover:text-[#26A560] transition-colors duration-300">
                     <AuthButton />
                   </li>
                 </div>
