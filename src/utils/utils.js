@@ -1,5 +1,6 @@
 // utils.js
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 /**
  * Axios instance with base config
@@ -145,10 +146,16 @@ export const redirectToAuthPage = () => {
       sendToAuthBot(token);
       postData("/api/auth/telegram/complete", { sessionToken: token }).then(
         (data) => {
-          console.log(data);
           setStorage("JWT", data?.jwt, true);
+          window.location.reload();
         }
       );
     }
   });
 };
+
+
+export const cleatBothStorage = () => {
+  clearStorage(true);
+  clearStorage(false);
+}
