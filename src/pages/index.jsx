@@ -6,8 +6,10 @@ import HomePage from "./Home/HomePage";
 import Legal from "./Legal/Legal";
 import RegionsPage from "./RegionsPage/RegionsPage";
 import ProductPage from "./ProductPage/ProductPage";
+import Profile from "./Profile/Profile";
 
 export {
+  Profile,
   HomePage,
   AboutUs,
   Announce,

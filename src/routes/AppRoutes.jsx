@@ -9,6 +9,7 @@ import {
   Legal,
   RegionsPage,
   ProductPage,
+  Profile,
 } from "../pages";
 import Layout from "../layouts";
 
@@ -23,6 +24,7 @@ function AppRoutes() {
         <Route path="legal" element={<Legal />} />
         <Route path="regions" element={<RegionsPage />} />
         <Route path="*" element={<ErrorPage />} />
+        <Route path="/profile" element={<Profile />} />
         <Route path="/product/:id" element={<ProductPage />} />
       </Routes>
     </Layout>
