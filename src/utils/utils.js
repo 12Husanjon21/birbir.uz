@@ -11,7 +11,6 @@ const api = axios.create({
   timeout: 10000,
   headers: {
     "Content-Type": "application/json",
-    "Cache-Control": "no-cache", // <- cache ishlatilmaydi
     Authorization: `Bearer ${JWT}`,
   },
 });
@@ -73,6 +72,8 @@ export const deleteData = async (url) => {
  */
 const handleApiError = (error) => {
   console.error("API Error:", error.response?.data || error.message);
+  // localStorage.clear()
+  // sessionStorage.clear()
   throw error;
 };
 
