@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 
 export default function AuthButton() {
   const token = getStorage("JWT", true);
-  if (token) {
     return (
       <>
         <Link to="/profile" className="flex items-center gap-2 cursor-pointer">
@@ -17,20 +16,4 @@ export default function AuthButton() {
         </Link>
       </>
     );
-  }
-
-  return (
-    <button
-      className="flex items-center gap-2 cursor-pointer"
-      onClick={() => redirectToAuthPage()}
-    >
-      <IoPersonAddOutline
-        size={"18px"}
-        className="text-[#A7AFBC] cursor-pointer"
-      />
-      <span className="button-module__buttonChildren--hvRdH">
-        Tizimga kirish
-      </span>
-    </button>
-  );
 }

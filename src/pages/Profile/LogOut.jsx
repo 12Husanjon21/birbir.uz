@@ -1,10 +1,11 @@
 import React from "react";
-// import { deleteData } from "../../utils/utils";
+import { cleatBothStorage, deleteData } from "../../utils/utils";
 
 export default function LogOut({ userId }) {
   const deleteUserProfile = async (userId) => {
-    // deleteData(`/api/users/${userId}`);
-    window.location.href = "/";
+    deleteData(`/api/users/${userId}`);
+    cleatBothStorage();
+    window.location.reload();
   };
 
   return <button onClick={() => deleteUserProfile(userId)}>LogOut</button>;
