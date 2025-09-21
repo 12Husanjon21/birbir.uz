@@ -1,6 +1,5 @@
 // utils.js
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
 
 /**
  * Axios instance with base config
@@ -21,6 +20,32 @@ const api = axios.create({
  * @param {string} url - Endpoint to fetch from
  * @param {object} params - Query params
  */
+
+// bu funksiya login qilmagan bo'lsa auth botga yuboradi
+export const redirectToAuthPage = () => {
+  const sendToAuthBot = (sessionToken) => {
+    window.open(
+      `https://t.me/toparmoncombot?start=${sessionToken}`,
+      "_blank",
+      "noopener,noreferrer"
+    );
+  };
+
+  getData("/api/auth/telegram/session").then((data) => {
+    const token = data?.sessionToken;
+    if (data?.sessionToken) {
+      setStorage("sessionToken", token, false);
+      sendToAuthBot(token);
+      postData("/api/auth/telegram/complete", { sessionToken: token }).then(
+        (data) => {
+          setStorage("JWT", data?.jwt, true);
+          window.location.reload();
+        }
+      );
+    }
+  });
+};
+
 export const getData = async (url, params = {}) => {
   try {
     const response = await api.get(url, { params });
@@ -72,6 +97,10 @@ export const deleteData = async (url) => {
  * Handle API errors
  */
 const handleApiError = (error) => {
+  if (error.response?.status === 401) {
+    redirectToAuthPage();
+  }
+
   console.error("API Error:", error.response?.data || error.message);
   // localStorage.clear()
   // sessionStorage.clear()
@@ -129,33 +158,7 @@ export const clearStorage = (isLocal) => {
   }
 };
 
-// bu funksiya login qilmagan bo'lsa auth botga yuboradi
-export const redirectToAuthPage = () => {
-  const sendToAuthBot = (sessionToken) => {
-    window.open(
-      `https://t.me/toparmoncombot?start=${sessionToken}`,
-      "_blank",
-      "noopener,noreferrer"
-    );
-  };
-
-  getData("/api/auth/telegram/session").then((data) => {
-    const token = data?.sessionToken;
-    if (data?.sessionToken) {
-      setStorage("sessionToken", token, false);
-      sendToAuthBot(token);
-      postData("/api/auth/telegram/complete", { sessionToken: token }).then(
-        (data) => {
-          setStorage("JWT", data?.jwt, true);
-          window.location.reload();
-        }
-      );
-    }
-  });
-};
-
-
 export const cleatBothStorage = () => {
   clearStorage(true);
   clearStorage(false);
-}
+};
