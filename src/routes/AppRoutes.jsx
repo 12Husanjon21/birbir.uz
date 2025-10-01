@@ -12,22 +12,22 @@ import {
   Profile,
 } from "../pages";
 import Layout from "../layouts";
-import Auth from "../pages/Auth/Auth";
-import { getStorage } from "../utils/utils";
+// import Auth from "../pages/Auth/Auth";
+// import { getStorage } from "../utils/utils";
 
 function AppRoutes() {
-  const token=getStorage("JWT", true);
+  // const token=getStorage("JWT", true);
   
-  if (!token) {
-    return (
-      <>
-        <Routes>
-          <Route path="/auth" element={<Auth />} />
-          <Route path="*" element={<Auth />} />
-        </Routes>
-      </>
-    )
-  }
+  // if (!token) {
+  //   return (
+  //     <>
+  //       <Routes>
+  //         {/* <Route path="/auth" element={<Auth />} /> */}
+  //         <Route path="*" element={<Auth />} />
+  //       </Routes>
+  //     </>
+  //   )
+  // }
   
   return (
     <>
